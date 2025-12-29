@@ -601,15 +601,15 @@ const App = () => {
       {/* Table Section */}
       <div className="bg-white border border-slate-200 rounded-xl shadow-sm flex-1 overflow-hidden flex flex-col min-h-0">
          <div className="overflow-auto flex-1 custom-scrollbar">
-            <table className="w-full text-left border-collapse">
+            <table className="w-full text-center border-collapse">
                <thead className="sticky top-0 z-10 shadow-sm">
                   <tr>
                     {config.headers.map((h, i) => (
                       <th 
                         key={i} 
-                        className="bg-slate-50 px-4 py-3 text-[13px] font-bold text-slate-700 border-b border-r border-slate-200 last:border-r-0 whitespace-nowrap group relative"
+                        className="bg-slate-50 px-4 py-3 text-[13px] font-bold text-slate-700 border-b border-r border-[#cbd5e1] last:border-r-0 whitespace-nowrap group relative"
                       >
-                         <div className="flex items-center justify-between gap-2">
+                         <div className="flex items-center justify-center gap-2">
                            <span>{h}</span>
                            {HEADER_TOOLTIPS[h] && (
                              <div className="group relative">
@@ -623,21 +623,21 @@ const App = () => {
                          </div>
                       </th>
                     ))}
-                    <th className="bg-slate-50 px-4 py-3 text-[13px] font-bold text-slate-700 border-b border-slate-200 whitespace-nowrap sticky right-0 z-20 shadow-[-10px_0_10px_-5px_rgba(0,0,0,0.05)]">
+                    <th className="bg-slate-50 px-4 py-3 text-[13px] font-bold text-slate-700 border-b border-[#cbd5e1] whitespace-nowrap sticky right-0 z-20 shadow-[-10px_0_10px_-5px_rgba(0,0,0,0.05)]">
                       操作
                     </th>
                   </tr>
                </thead>
                <tbody>
                   {tableData.map((row, idx) => (
-                    <tr key={row.id} className="hover:bg-blue-50/50 transition-colors border-b border-slate-100 last:border-0 group">
+                    <tr key={row.id} className="hover:bg-blue-50/50 transition-colors border-b border-[#cbd5e1] group">
                        {config.headers.map((h, colIdx) => (
                          <td key={colIdx} className="px-4 py-2.5 text-[13px] text-slate-600 border-r border-slate-100 last:border-r-0 whitespace-nowrap max-w-[200px] truncate">
                            {row[h]}
                          </td>
                        ))}
                        <td className="px-4 py-2.5 bg-white border-l border-slate-100 sticky right-0 shadow-[-10px_0_10px_-5px_rgba(0,0,0,0.05)]">
-                         <div className="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                         <div className="flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
                            <button className="text-blue-500 hover:text-blue-700" title="编辑"><Edit size={14} /></button>
                            <button className="text-red-500 hover:text-red-700" title="删除"><Trash2 size={14} /></button>
                          </div>
